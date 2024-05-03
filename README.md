@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+# Calculator mortgage 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+*Note: This is an exercise from [frontendeval.com](https://frontendeval.com/questions/mortgage-calculator?tab=question).*
 
-## Available Scripts
+## Instructions
+Create a calculator that accepts three inputs and calculates your monthly mortgage payment: 
 
-In the project directory, you can run:
+- Principal loan amount
+- Interest rate (annual)
+- Number of years on your mortgage
 
-### `npm start`
+The standard math equation for calculating your *monthly* mortgage payment is:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+P(r(1+r)<sup>n</sup>/((1+r)<sup>n</sup>)-1)) where:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. `P` is the principal loan amount
+2. `r` is the **monthly** interest rate
+3. `n` is the **total number of payments** on your mortgage
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Note the bolded differences between the equation variables and the inputs. The inputs are set up that way as a matter of user experience: borrowers tend to be presented numbers like this by their bank. Your job when working on this feature is to convert the user inputs into the numbers that will be used in the calculation. Users will make 12 payments on their mortgage per year of their mortgage, and the monthly interest rate is the annual interest rate divided by 12.
 
-### `npm run build`
+For example:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Principal loan amount: $500,000
+Interest rate: 3%
+Length of loan: 30 years
+=> $2,108 monthly mortgage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Running app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+````shell
+git clone https://github.com/nadia-mm/Mortgage-Calculator.git
+npm install
+npm start
+````
 
-### `npm run eject`
+## Running tests
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+````shell
+npm test
+````
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## DEMO
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![](https://github.com/nadia-mm/Mortgage-Calculator/blob/main/gif/demo.gif)
