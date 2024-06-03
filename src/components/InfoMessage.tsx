@@ -4,7 +4,7 @@ import { data } from "../test/data";
 export const InfoMessage = ({ message }: IMessage) => (
   <div
     data-testid={data.infoMessage}
-    className="mb-4 flex items-center bg-blue-500 text-white text-sm font-bold px-4 py-3"
+    className="forced-color-adjust-auto mb-4 flex items-center bg-blue-500 text-white text-sm font-bold px-4 py-3"
     role="alert"
   >
     <svg
