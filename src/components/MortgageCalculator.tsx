@@ -1,8 +1,13 @@
 import { useState, ChangeEvent, useEffect } from "react";
 import { Input } from "./Input";
-import { MortgageInputProps } from "./../models/interfaces";
 import { InfoMessage } from "./InfoMessage";
 import { data } from "../test/data";
+
+interface MortgageInputProps {
+  amount: number;
+  rate: number;
+  length: number;
+}
 
 export const MortgageCalculator = () => {
   const [amount, setAmount] = useState<number>(0);

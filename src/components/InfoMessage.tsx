@@ -1,5 +1,8 @@
-import { IMessage } from "../models/interfaces";
 import { data } from "../test/data";
+
+interface IMessage {
+  message: string;
+}
 
 export const InfoMessage = ({ message }: IMessage) => (
   <div

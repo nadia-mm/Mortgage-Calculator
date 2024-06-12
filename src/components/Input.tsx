@@ -1,4 +1,11 @@
-import { InputProps } from "../models/interfaces";
+import { ChangeEvent } from "react";
+
+interface InputProps {
+  title: string;
+  value: number;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  unit?: string;
+}
 
 export const Input = ({ title, value, onChange, unit }: InputProps) => (
   <div
@@ -12,7 +19,7 @@ export const Input = ({ title, value, onChange, unit }: InputProps) => (
       data-testid={`${title.split(" ").join("-").toLocaleLowerCase()}-input`}
       min="0"
       onChange={onChange}
-      value={value} 
+      value={value}
       type="number"
       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
       required
